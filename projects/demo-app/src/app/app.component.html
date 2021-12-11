@@ -1,0 +1,23 @@
+<ngx-star-rating-input
+  [precision]="0.5"
+  [emptyIcon]="emptyIcon"
+  [halfIcon]="halfIcon"
+  [fullIcon]="fullIcon"
+  [areStarsPositionStatic]="true"
+>
+
+</ngx-star-rating-input>
+
+
+<ng-template #emptyIcon>
+    <ion-icon name="star-outline"></ion-icon>
+</ng-template>
+
+<ng-template #halfIcon>
+  <ion-icon name="star-half-outline"></ion-icon>
+</ng-template>
+
+
+<ng-template #fullIcon>
+  <ion-icon name="star"></ion-icon>
+</ng-template>

@@ -1,0 +1,59 @@
+<div #starsContainer (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" class="stars-container">
+  <div (mouseover)="onMouseOverStar($event, value)" *ngFor="let value of maxAsArray" class="star-container">
+
+    <span
+      *ngIf="precision === 0.5"
+      [class.filled]="isSelecting ? value - 0.5 <= hoveredValue : (value - 0.5 <= formControl.value)"
+      class="half-rating"
+    >
+      <label for="{{componentId + (value - 0.5)}}">
+        <ng-container *ngTemplateOutlet="halfIcon || defaultEmptyIcon">
+        </ng-container>
+      </label>
+      <input
+        [formControl]="formControl"
+        [value]="value - 0.5"
+        class="input-hidden"
+        id="{{componentId + (value - 0.5)}}"
+        name="rating"
+        type="radio"
+      />
+    </span>
+
+    <span class="empty-rating">
+      <ng-container *ngTemplateOutlet="emptyIcon || defaultEmptyIcon">
+      </ng-container>
+    </span>
+
+    <span [class.filled]="isSelecting ? value <= hoveredValue : (value <= formControl.value)"
+         class="full-rating">
+      <label for="{{componentId + value}}">
+        <ng-container *ngTemplateOutlet="fullIcon || defaultFullIcon">
+        </ng-container>
+      </label>
+      <input
+        [formControl]="formControl"
+        [value]="value"
+        class="input-hidden"
+        id="{{componentId + value}}"
+        name="rating"
+        type="radio"
+      />
+    </span>
+  </div>
+
+</div>
+
+
+<ng-template #defaultEmptyIcon>
+  <ion-icon name="star-outline"></ion-icon>
+</ng-template>
+
+<ng-template #defaultHalfIcon>
+  <ion-icon name="star-half-outline"></ion-icon>
+</ng-template>
+
+
+<ng-template #defaultFullIcon>
+  <ion-icon name="star"></ion-icon>
+</ng-template>

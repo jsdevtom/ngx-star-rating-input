@@ -1,0 +1,51 @@
+.stars-container {
+  font-size: 2rem;
+}
+
+.input-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.half-rating {
+  position: absolute;
+  width: 50%;
+  overflow: hidden;
+  z-index: 1;
+  visibility: hidden;
+
+  &.filled {
+    visibility: initial;
+  }
+}
+
+.full-rating {
+  visibility: hidden;
+  z-index: -1;
+
+  &.filled {
+    visibility: initial;
+  }
+}
+
+.empty-rating {
+  position: absolute;
+  z-index: -1;
+}
+
+.star-container {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform .25s;
+  }
+}

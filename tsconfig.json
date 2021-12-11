@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-star-rating-input": [
+        "dist/ngx-star-rating-input/ngx-star-rating-input",
+        "dist/ngx-star-rating-input"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
